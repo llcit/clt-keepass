@@ -1,0 +1,26 @@
+body {
+    padding-top: 70px;
+}
+
+.navbar-nav a {
+ line-height: 50px;
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+ .apps .rows {
+ -moz-column-width: 30em;
+ -webkit-column-width: 30em;
+ -moz-column-gap: .5em;
+ -webkit-column-gap: .5em;
+
+}
+
+.icon {
+    float:left;
+    height:32px;
+}
+
+.footer {
+  margin-left: 5em;
+}

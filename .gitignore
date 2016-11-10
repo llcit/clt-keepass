@@ -1,0 +1,8 @@
+settings.ini
+*.pyc
+*~
+__pycache__
+db.sqlite3
+project.db
+/static
+.DS_Store

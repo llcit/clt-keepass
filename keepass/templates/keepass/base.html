@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <!-- header -->
+  <head>
+    <meta character="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Keepass">
+    <meta name="author" content="Songmin Kim">
+
+    <meta character="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Keepass">
+    <meta name="author" content="Songmin Kim">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Bootstrap Core JavaScript and CSS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Static css -->
+    <link rel="stylesheet" href="{% static 'css/keepass.css' %}">
+    {% block css %}
+    {% endblock %}
+    <title>Keepass</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <!-- container-nav -->
+      <div class="container">
+      	<!-- navbar menu -->
+      	<div class="navbar-header">
+      	  <a class="navbar-brand" href="http://clt.manoa.hawaii.edu"><img src="{% static 'images/CLT-projects-logo-185.png' %}"/></a>
+      	</div>
+        {% if user.is_authenticated %}
+        <div class="navbar-nav navbar-right justified">
+            <a href="admin/logout"><span class="glyphicon glyphicon-log-out"</span> Logout</a>
+        </div>
+        {% else %}
+        <div class="navbar-nav navbar-right justified">
+           <a href="admin/login">Login</a>
+         </div>
+        {% endif %}
+      </div><!-- /.container-nav -->
+    </nav>
+
+    <!-- container -->
+    <div class="container">
+      <div class="row">
+      	  <div class="contents">
+      	    {% block content %}
+      	    {% endblock %}
+      	  </div>
+      </div><!-- /.row -->
+      <!-- footer -->
+      <div class="row">
+      {% include 'keepass/footer.html' %}
+      </div> <!-- /. footer -->
+    </div><!-- /. container -->
+  </body>
+</html>
